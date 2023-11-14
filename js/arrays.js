@@ -65,8 +65,10 @@ function task3() {
         let str = `Заказ покупателя ${this.fio} составил ${this.price*this.quantity*(100-action)/100},скидка составила ${action}%`;
         console.log(str);
     }
+    showOrder(10);
     orders.forEach(elem=>showOrder.call(elem,0));
     orders.forEach(elem=>showOrder.call(elem,10));
+    showOrder.call(orders[0],10)
 }
 
 function task4() {
