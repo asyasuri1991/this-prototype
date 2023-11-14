@@ -81,8 +81,7 @@ function task4() {
                 return str;
             })
         }
-    }
-    
+    }   
     let mainMenu=new Menu("home.html","services.html","price.html","about.html");
     for (elem of mainMenu.navList)
         console.log(elem);
