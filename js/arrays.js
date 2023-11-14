@@ -74,18 +74,20 @@ function task3() {
 function task4() {
     function Menu(...navList) {
         this.navList = navList;
-        this.wrapperA = function () {
-            return this.navList.map(elem => `<a href='${elem}'>item</a>`);
+        this.wrapperA = function (...anchor) {
+            let i=0;
+            return this.navList.map(function(elem,i){
+                let str=`<a href='${elem}'>${anchor[i]}</a>`;
+                return str;
+            })
         }
-    }
+    }   
     let mainMenu=new Menu("home.html","services.html","price.html","about.html");
     for (elem of mainMenu.navList)
         console.log(elem);
-
-        console.log(mainMenu.wrapperA());
-
+        console.log(mainMenu.wrapperA("Домой","Сервисы","Прайс-лист","О нас"));
     let footerMenu=new Menu("newPage.html","checkPage.html","seoPage.html");
     for (elem of footerMenu.navList)
         console.log(elem);
-        console.log(footerMenu.wrapperA());
+        console.log(footerMenu.wrapperA("Создание страниц","Проверка страниц","Сеонизация страниц"));
 }
